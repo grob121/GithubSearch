@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fAM-Oa-47A">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Github Search-->
+        <scene sceneID="2U2-F2-C2J">
+            <objects>
+                <viewController storyboardIdentifier="Homepage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fAM-Oa-47A" customClass="HomepageViewController" customModule="GithubSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XQD-aL-02L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aGD-Ic-e13">
+                                <rect key="frame" x="8" y="52" width="398" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPc-RP-d78">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxI-RV-K3V">
+                                        <rect key="frame" x="350" y="0.0" width="48" height="34"/>
+                                        <state key="normal" title="Search"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gp2-fp-Ow9">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homepageCell" id="ZYW-f0-b0v">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZYW-f0-b0v" id="B3H-1z-4Ca">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zgf-1w-zLu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gp2-fp-Ow9" firstAttribute="bottom" secondItem="zgf-1w-zLu" secondAttribute="bottom" id="3Fi-dr-QRl"/>
+                            <constraint firstItem="aGD-Ic-e13" firstAttribute="leading" secondItem="zgf-1w-zLu" secondAttribute="leading" constant="8" id="Jcu-E5-1La"/>
+                            <constraint firstItem="Gp2-fp-Ow9" firstAttribute="top" secondItem="aGD-Ic-e13" secondAttribute="bottom" constant="8" id="KOO-zn-xTx"/>
+                            <constraint firstItem="aGD-Ic-e13" firstAttribute="top" secondItem="zgf-1w-zLu" secondAttribute="top" constant="8" id="Pbl-XE-gnI"/>
+                            <constraint firstItem="zgf-1w-zLu" firstAttribute="trailing" secondItem="aGD-Ic-e13" secondAttribute="trailing" constant="8" id="WzH-Ib-aBx"/>
+                            <constraint firstItem="Gp2-fp-Ow9" firstAttribute="leading" secondItem="zgf-1w-zLu" secondAttribute="leading" id="YFk-gC-JrG"/>
+                            <constraint firstItem="zgf-1w-zLu" firstAttribute="trailing" secondItem="Gp2-fp-Ow9" secondAttribute="trailing" id="oMp-Wd-rQN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Github Search" id="BEt-4l-LBu"/>
+                    <connections>
+                        <outlet property="searchButton" destination="WxI-RV-K3V" id="oJ5-vR-K6j"/>
+                        <outlet property="searchTextField" destination="dPc-RP-d78" id="7PQ-3w-dSd"/>
+                        <outlet property="tableView" destination="Gp2-fp-Ow9" id="pxl-sw-7yT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMJ-Yx-V8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440.57971014492756" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
